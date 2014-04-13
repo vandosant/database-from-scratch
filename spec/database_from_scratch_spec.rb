@@ -5,9 +5,14 @@ require 'capybara/rspec'
 Capybara.app = DatabaseApp
 
 feature 'viewing the database contents' do
-  scenario 'user can visit the homepage' do
+  scenario 'user can add a new object' do
     visit '/'
 
-    expect(page).to have_content "Hello"
+    expect(page).to have_no_content "Equilateral triangle"
+
+    fill_in "create_object", with: "Equilateral triangle"
+    click_on "Create"
+
+    expect(page).to have_content "Equilateral triangle"
   end
 end

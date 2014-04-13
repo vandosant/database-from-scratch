@@ -2,6 +2,10 @@ require 'sinatra/base'
 
 class DatabaseApp < Sinatra::Application
   get '/' do
-    "Hello"
+    erb :index
+  end
+
+  post '/' do
+    params[:create_object]
   end
 end
