@@ -1,0 +1,2 @@
+CREATE DATABASE database_from_scratch_test;
+CREATE DATABASE database_from_scratch_development;

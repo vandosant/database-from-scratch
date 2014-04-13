@@ -5,6 +5,9 @@ require 'capybara/rspec'
 Capybara.app = DatabaseApp
 
 feature 'viewing the database contents' do
+  before do
+    DB[:objects].delete
+  end
   scenario 'user can add a new object' do
     visit '/'
 

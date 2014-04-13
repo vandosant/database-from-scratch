@@ -2,10 +2,11 @@ require 'sinatra/base'
 
 class DatabaseApp < Sinatra::Application
   get '/' do
-    erb :index
+    erb :index, locals: {:objects => DB[:objects].to_a}
   end
 
   post '/' do
-    params[:create_object]
+    DB[:objects].insert(:name => params[:create_object])
+    redirect '/'
   end
 end

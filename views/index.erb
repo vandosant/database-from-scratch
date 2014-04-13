@@ -5,5 +5,10 @@
   <input type="text" placeholder="Enter new object" name="create_object">
   <button type="submit">Create</button>
 </form>
+<ul>
+<% objects.each do |object|%>
+  <li><%= object[:name] %></li>
+<% end %>
+</ul>
 </body>
 </html>
